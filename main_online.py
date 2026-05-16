@@ -20,7 +20,7 @@ from utils.plot_util import plot_distribution
 
 import scipy.optimize as sopt
 
-parser = argparse.ArgumentParser(description='OnZeta for ImageNet')
+parser = argparse.ArgumentParser(description='OOD scoring for ImageNet')
 
 parser.add_argument('--seed', default=2, type=int, help="random seed") #2
 
