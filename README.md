@@ -25,6 +25,7 @@ Please refer to [KNN](https://github.com/deeplearning-wisc/knn-ood), download OO
 We first need to compute the image embedding, ID class embedding, filter negative label embedding with the CLIP model by running
 
 > python eval_ood_detection.py
+
 and perform OOD scoring by running
 
 > python main_online.py
