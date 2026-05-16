@@ -25,7 +25,7 @@ parser = argparse.ArgumentParser(description='OOD scoring for ImageNet')
 parser.add_argument('--seed', default=2, type=int, help="random seed") #2
 
 # hyper-parameters
-parser.add_argument('--temp', default=0.009, type=float) # 0.01 0.012 (R) 0.01 (A) 0.009 (V2) 0.01 (S) 0.01 (B32) 0.01 (L14) 0.01 (L14336) 0.01 (Res50) 0.009 (common)
+parser.add_argument('--temp', default=0.009, type=float) # 0.01 0.012 (R) 0.01 (A) 0.009 (V2) 0.01 (S) 0.01 (B32) 0.01 (L14) 0.01 (L14336) 0.01 (Res50)
 
 parser.add_argument('--temp2', default=0.01, type=float) # KL 12
 
@@ -33,15 +33,15 @@ parser.add_argument('--T', default=0.0, type=float)
 
 parser.add_argument('--ngroups', default=1, type=int)
 
-parser.add_argument('--eta', default=1.45, type=float) #1.2 1.14 (R) 1.18 (A) 1.45 (V2) 0.8 (S) 1.2 (B32) 1.3 (L14) 1.2 (L14336) 1.3 (Res50) 1.15 (common)
+parser.add_argument('--eta', default=1.45, type=float) #1.2 1.14 (R) 1.18 (A) 1.45 (V2) 0.8 (S) 1.2 (B32) 1.3 (L14) 1.2 (L14336) 1.3 (Res50)
 
-parser.add_argument('--r', default=1.05,type=float) # 1.05 1.05 (R) 1.05 (A) 1.05 (V2) 1.05 (S) 1.05 (B32) 1.06 (L14) 1.06 (L14336) 1.06 (Res50) 1.07 (common)
+parser.add_argument('--r', default=1.05,type=float) # 1.05 1.05 (R) 1.05 (A) 1.05 (V2) 1.05 (S) 1.05 (B32) 1.06 (L14) 1.06 (L14336) 1.06 (Res50)
 
-parser.add_argument('--beta', default=-0.08, type=float) #-0.1 0.0 (R) 0.0 (A) -0.08 (v2) 0.06 (S) -0.12 (B32) -0.1 (L14) -0.12 (L14336) -0.1 (Res50) -0.05 (common)
+parser.add_argument('--beta', default=-0.08, type=float) #-0.1 0.0 (R) 0.0 (A) -0.08 (v2) 0.06 (S) -0.12 (B32) -0.1 (L14) -0.12 (L14336) -0.1 (Res50)
 
-parser.add_argument('--epochs', default=5, type=int) #15 5 (R) 5 (A) 5 (V2) 20 (S) 15 (B32) 15 (L14) 0 (L14336) 30 (Res50) 15 (common)
+parser.add_argument('--epochs', default=5, type=int) #15 5 (R) 5 (A) 5 (V2) 20 (S) 15 (B32) 15 (L14) 0 (L14336) 30 (Res50)
 
-parser.add_argument('--lr', default=1e-2, type=float) #1e-2 1e-2 (R) 1e-3 (A) 1e-2 (V2) 1e-3 (S) 1e-2 (B32) 1e-3 (L14) 1e-3 (Res50) 1e-2 (common)
+parser.add_argument('--lr', default=1e-2, type=float) #1e-2 1e-2 (R) 1e-3 (A) 1e-2 (V2) 1e-3 (S) 1e-2 (B32) 1e-3 (L14) 1e-3 (Res50)
 
 # end
 
@@ -245,7 +245,7 @@ def main():
 
     log = setup_log(args)
 
-    # image_feature_dict = torch.load('./CLIP_features_B16.pth')
+    image_feature_dict = torch.load('./CLIP_features_B16.pth')
 
     # image_feature_dict = torch.load('./CLIP_features_L14.pth')
     # image_feature_dict = torch.load('./CLIP_features_B32.pth')
@@ -254,7 +254,7 @@ def main():
 
     # image_feature_dict = torch.load('./CLIP_features_B16_R.pth')
     # image_feature_dict = torch.load('./CLIP_features_B16_A.pth')
-    image_feature_dict = torch.load('./CLIP_features_B16_V2.pth')
+    # image_feature_dict = torch.load('./CLIP_features_B16_V2.pth')
     # image_feature_dict = torch.load('./CLIP_features_B16_S.pth')
 
     print(image_feature_dict.keys())
